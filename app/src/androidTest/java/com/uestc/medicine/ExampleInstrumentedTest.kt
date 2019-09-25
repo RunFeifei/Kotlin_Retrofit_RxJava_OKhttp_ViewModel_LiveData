@@ -1,4 +1,4 @@
-package com.uestc.base
+package com.uestc.medicine
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

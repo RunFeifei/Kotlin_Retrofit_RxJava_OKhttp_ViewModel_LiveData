@@ -1,4 +1,4 @@
-package com.uestc.base
+package com.uestc.medicine
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.uestc.base.net;
+package com.uestc.medicine.net;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

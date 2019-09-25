@@ -1,4 +1,4 @@
-package com.uestc.base.base
+package com.uestc.medicine.base
 
 /**
  * Created by PengFeifei on 2019-07-26.

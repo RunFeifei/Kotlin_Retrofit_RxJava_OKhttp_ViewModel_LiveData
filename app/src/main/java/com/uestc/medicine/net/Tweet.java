@@ -1,4 +1,4 @@
-package com.uestc.base.net;
+package com.uestc.medicine.net;
 
 import android.text.TextUtils;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

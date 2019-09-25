@@ -1,4 +1,4 @@
-package com.uestc.base.net
+package com.uestc.medicine.net
 
 import io.reactivex.Observable
 import retrofit2.Response

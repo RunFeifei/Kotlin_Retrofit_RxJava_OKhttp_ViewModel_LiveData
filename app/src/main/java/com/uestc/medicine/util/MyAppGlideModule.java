@@ -1,4 +1,4 @@
-package com.uestc.base.util;
+package com.uestc.medicine.util;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.uestc.base.base
+package com.uestc.medicine.base
 
 import android.app.ProgressDialog
 import android.os.Bundle

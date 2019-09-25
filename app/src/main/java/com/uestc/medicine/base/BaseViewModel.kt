@@ -1,4 +1,4 @@
-package com.uestc.base.base
+package com.uestc.medicine.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
