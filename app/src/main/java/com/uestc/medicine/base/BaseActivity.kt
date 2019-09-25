@@ -1,11 +1,13 @@
 package com.uestc.medicine.base
 
+import android.app.Dialog
 import android.app.ProgressDialog
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.uestc.medicine.util.LoadingDialog
 import com.uestc.request.error.ErrorCode
 import com.uestc.request.error.RequestException
 
@@ -15,7 +17,7 @@ import com.uestc.request.error.RequestException
 
 abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity(), IBaseView {
     protected lateinit var viewModel: T
-    private lateinit var progressDialog: ProgressDialog
+    private lateinit var progressDialog: Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,8 +59,8 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity(), IBaseView 
 
 
     protected abstract fun initViewModel(): T
-    protected abstract fun initPage(savedInstanceState: Bundle?)
     protected abstract fun layoutId():Int
+    protected abstract fun initPage(savedInstanceState: Bundle?)
 
     /*****************************************************************************/
 
@@ -89,8 +91,8 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity(), IBaseView 
 
     /*****************************************************************************/
 
-    private fun initProgressDialog(): ProgressDialog {
-        val progressDialog = ProgressDialog(this)
+    private fun initProgressDialog(): LoadingDialog {
+        val progressDialog = LoadingDialog(this)
         progressDialog.setCanceledOnTouchOutside(false)
         progressDialog.setCancelable(false)
         return progressDialog

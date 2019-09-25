@@ -1,4 +1,4 @@
-package com.uestc.medicine.viewmodel
+package com.uestc.medicine.util
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

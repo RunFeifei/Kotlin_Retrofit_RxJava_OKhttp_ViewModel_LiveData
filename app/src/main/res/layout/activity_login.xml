@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".LoginActivity">
+    tools:context=".ui.LoginActivity">
 
     <ImageView
         android:id="@+id/imgSign1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="2dp"
         android:src="@drawable/sign1"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -24,7 +24,8 @@
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginLeft="2dp"
-        android:background="#ffffff"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@id/imgSign1"
         app:layout_constraintLeft_toRightOf="@id/imgSign1"
         app:layout_constraintRight_toRightOf="parent"
@@ -44,7 +45,8 @@
         android:id="@+id/edtPass"
         android:layout_width="200dp"
         android:layout_height="30dp"
-        android:background="#ffffff"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@id/imgSign2"
         app:layout_constraintLeft_toLeftOf="@id/edtName"
         app:layout_constraintTop_toTopOf="@id/imgSign2"

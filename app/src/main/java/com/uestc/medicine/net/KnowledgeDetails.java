@@ -9,29 +9,30 @@ import java.util.List;
  * Created by PengFeifei on 2018/10/27.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User implements Serializable {
+public class KnowledgeDetails implements Serializable {
 
 
     public RetBean ret;
-    public List<DcotorBean> dcotor;
+    public List<KnowledgeBean> knowledge;
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class RetBean implements Serializable{
 
-        public boolean success;
+        public String success;
         public String message;
+        public String code;
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class DcotorBean implements Serializable{
-        public String doctor_id;
+    public static class KnowledgeBean implements Serializable{
+        public String knowledge_id;
         public String name;
-        public String telephone;
-        public Object zone;
-        public String hospital;
-        public String profession;
-        public String company_id;
-        public String bonus;
-        public String used_bonus;
+        public Object note;
+        public String url;
+        public String face_url;
+        public String for_user;
+        public String study_time;
+        public String browse_qty;
+        public String column_name;
     }
 }
