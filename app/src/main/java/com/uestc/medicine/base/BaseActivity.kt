@@ -22,7 +22,6 @@ abstract class BaseActivity<T : BaseViewModel> : AppCompatActivity(), IBaseView 
         setContentView(layoutId())
         viewModel = initViewModel()
         progressDialog = initProgressDialog()
-        viewModel = initViewModel()
         viewModel.loadingState.observe(this, Observer<Boolean> {
             if (it == null) {
                 return@Observer
