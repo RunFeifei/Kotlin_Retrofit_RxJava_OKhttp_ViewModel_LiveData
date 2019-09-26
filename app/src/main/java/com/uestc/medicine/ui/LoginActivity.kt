@@ -50,6 +50,7 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
                 Common.UID = "1"
                 startActivity(Intent(this, MenuActivity::class.java))
             }
+            finish()
         }
     }
 

@@ -35,7 +35,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.uestc.medicine.ui.MenuDetailsActivity"
-            android:screenOrientation="portrait" />
+            android:theme="@style/AppTheme.FullScreen"
+            android:screenOrientation="landscape" />
         <activity
             android:name="com.uestc.medicine.ui.WebActivity"
             android:theme="@style/AppTheme.FullScreen"
