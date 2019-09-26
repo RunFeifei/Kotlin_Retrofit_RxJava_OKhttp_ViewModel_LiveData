@@ -42,9 +42,8 @@ class MenuDetailsActivity : BaseActivity<MenuDetailViewModel>() {
                 }
                 val content = kns[0]
                 Glide.with(this).load(content.face_url).into(img)
-                textNext.text = "去学习" + content.name
                 this.title = content.name
-                textNext.click {
+                img.click {
                     var intent = Intent(this, WebActivity::class.java)
                     intent.putExtra("url", content.url)
                     intent.putExtra("knowledge_id", content.knowledge_id)

@@ -26,10 +26,10 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
 
     override fun initPage(savedInstanceState: Bundle?) {
         title = "登录"
-//        if (BuildConfig.DEBUG) {
-//            edtName.setText("abc123")
-//            edtPass.setText("1234567")
-//        }
+        if (BuildConfig.DEBUG) {
+            edtName.setText("abc123")
+            edtPass.setText("1234567")
+        }
         textLogin.click {
             viewModel.loadUser("abc123", "1234567")
         }
