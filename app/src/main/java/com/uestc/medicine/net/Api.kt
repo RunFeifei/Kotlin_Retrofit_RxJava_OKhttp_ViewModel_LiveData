@@ -17,9 +17,8 @@ interface Api {
     fun getknowledgebyknowledgeid(@Query("knowledge_id") knowledge_id: String): Observable<Response<MenuDetails>>
 
 
-    @POST("cycle/v-tipr-physician/loginfordoctor.php")
-    @FormUrlEncoded
-    fun login(@Field("loginname") loginname: String, @Field("pwd") pwd: String): Observable<Response<User>>
+    @GET("cycle/v-tipr-physician/loginfordoctor.php")
+    fun login(@Query("loginname") loginname: String, @Query("pwd") pwd: String): Observable<Response<User>>
 
     @POST("cycle/v-tipr-physician/study.php")
     @FormUrlEncoded
