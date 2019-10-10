@@ -5,8 +5,6 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import com.uestc.medicine.R
@@ -24,7 +22,7 @@ class MenuActivity : BaseActivity<MenuViewModel>() {
 
 
     override fun layoutId(): Int {
-        return R.layout.activity_menu
+        return R.layout.activity_menu2
     }
 
     override fun initViewModel(): MenuViewModel {
@@ -41,10 +39,6 @@ class MenuActivity : BaseActivity<MenuViewModel>() {
         menu5.setOnClickListener(this::onMenuClick)
     }
 
-    override fun onResume() {
-        super.onResume()
-        Handler(Looper.getMainLooper()).postDelayed({ doAnimate() }, 300)
-    }
 
     private fun onMenuClick(img: View) {
         getMenuId(img)?.let {
