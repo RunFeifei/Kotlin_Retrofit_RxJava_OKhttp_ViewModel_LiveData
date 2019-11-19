@@ -56,7 +56,7 @@ public class AScheduler {
 
             @Override
             public Thread newThread(Runnable r) {
-                return new Thread(r, String.format("BackService-%1$d", count.incrementAndGet()));
+                return new Thread(r, String.format("Network-thread-%1$d", count.incrementAndGet()));
             }
         }
     }

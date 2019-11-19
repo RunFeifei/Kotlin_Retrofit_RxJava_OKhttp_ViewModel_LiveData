@@ -1,6 +1,10 @@
 package com.uestc.medicine.ui
 
+import android.annotation.TargetApi
 import android.os.Bundle
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.uestc.medicine.R
@@ -9,6 +13,7 @@ import com.uestc.medicine.util.Common
 import com.uestc.medicine.util.get
 import com.uestc.medicine.viewmodel.StudyViewModel
 import kotlinx.android.synthetic.main.activity_web.*
+
 
 class WebActivity : BaseActivity<StudyViewModel>() {
 
@@ -55,6 +60,17 @@ class WebActivity : BaseActivity<StudyViewModel>() {
         webView.settings.setAppCacheEnabled(true)
         webView.settings.setAppCachePath(cacheDir?.absolutePath)
         webView.settings.setAppCacheMaxSize(1024 * 1024 * 8)
+
+        webView.webViewClient = object : WebViewClient() {
+        }
+    }
+
+    override fun onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack()
+        } else {
+            super.onBackPressed()
+        }
     }
 
 

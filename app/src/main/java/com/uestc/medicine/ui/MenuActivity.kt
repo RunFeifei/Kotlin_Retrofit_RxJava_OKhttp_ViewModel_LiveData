@@ -15,7 +15,7 @@ import com.uestc.medicine.viewmodel.MenuViewModel
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import kotlinx.android.synthetic.main.activity_menu.*
+import kotlinx.android.synthetic.main.activity_menu2.*
 
 
 class MenuActivity : BaseActivity<MenuViewModel>() {
