@@ -32,6 +32,10 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name="com.uestc.medicine.ui.PagingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name="com.uestc.medicine.ui.MenuActivity"
             android:screenOrientation="portrait" />
         <activity

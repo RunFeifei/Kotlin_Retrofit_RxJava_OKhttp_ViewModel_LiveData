@@ -55,4 +55,6 @@ dependencies {
     annotationProcessor "com.github.yjfnypeu.Parceler:compiler:1.4.0"
     implementation "com.github.yjfnypeu.Parceler:api:1.4.0"
     kapt "com.android.databinding:compiler:$gradle_version"
+    implementation "android.arch.paging:runtime:2.1.0"
+
 }
