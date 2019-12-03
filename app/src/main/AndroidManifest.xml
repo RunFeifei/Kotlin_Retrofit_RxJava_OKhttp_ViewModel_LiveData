@@ -34,18 +34,21 @@
         <activity
             android:name="com.uestc.medicine.ui.PagingActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.uestc.medicine.ui.LinkedListActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.uestc.medicine.ui.MenuActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.uestc.medicine.ui.MenuDetailsActivity"
-            android:theme="@style/AppTheme.FullScreen"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.FullScreen" />
         <activity
             android:name="com.uestc.medicine.ui.WebActivity"
-            android:theme="@style/AppTheme.FullScreen"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.FullScreen" />
 
     </application>
 

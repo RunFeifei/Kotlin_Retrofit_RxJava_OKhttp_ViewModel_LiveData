@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.uestc.medicine.R
 import com.uestc.medicine.net.User
+import com.uestc.medicine.util.click
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
@@ -14,8 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var intent = Intent(this, PagingActivity::class.java)
-        startActivity(intent)
-        finish()
+        text.click {
+            var intent = Intent(this, LinkedListActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

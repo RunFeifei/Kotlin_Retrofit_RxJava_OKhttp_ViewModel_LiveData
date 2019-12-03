@@ -13,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -56,5 +57,6 @@ dependencies {
     implementation "com.github.yjfnypeu.Parceler:api:1.4.0"
     kapt "com.android.databinding:compiler:$gradle_version"
     implementation "android.arch.paging:runtime:2.1.0"
+    api 'com.github.ssseasonnn:IronBranch:1.0.0'
 
 }
