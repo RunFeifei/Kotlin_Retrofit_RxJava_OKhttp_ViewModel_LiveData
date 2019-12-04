@@ -6,7 +6,6 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.uestc.medicine.adapter.DishPagingAdapter
-import com.uestc.medicine.adapter.LoadCallback
 import com.uestc.medicine.adapter.SangeListDiffer
 import com.uestc.medicine.net.DishShopEntity
 import com.uestc.request.RequestContext
@@ -18,7 +17,6 @@ import com.uestc.request.RequestContext
 
 class ShopDataSource(private var initialKey: Int = 0) {
 
-    private var adapter: LoadCallback? = null
     private var nextPage: Int = initialKey
     private var previousPage: Int = initialKey
     private var pagingListDiffer = SangeListDiffer()
@@ -34,13 +32,13 @@ class ShopDataSource(private var initialKey: Int = 0) {
         }
     }
 
-    fun getItemInner(position: Int): DishShopEntity {
+    fun getItem(position: Int, fromBind: Boolean): DishShopEntity {
         Log.e("TAG--getItemInner", "-----$position")
         dispatchLoad(position)
         return pagingListDiffer.get(position)
     }
 
-    fun size(): Int {
+    fun getItemCount(): Int {
         return pagingListDiffer.size()
     }
 
@@ -49,7 +47,7 @@ class ShopDataSource(private var initialKey: Int = 0) {
             Log.e("TAG--dispatchLoad", "-----$position----loadPrevious")
             loadPrevious()
         }
-        if (position == size() - 1) {
+        if (position == getItemCount() - 1) {
             Log.e("TAG--dispatchLoad", "-----$position----loadAfter")
             loadAfter()
         }
@@ -88,9 +86,8 @@ class ShopDataSource(private var initialKey: Int = 0) {
         loadInitial()
     }
 
-    fun setAdapter(adapter: LoadCallback?) {
-        this.adapter = adapter
-        pagingListDiffer.adapter = adapter as DishPagingAdapter
+    fun setAdapter(adapter: DishPagingAdapter?) {
+        pagingListDiffer.adapter = adapter
         invalidate(initialKey)
     }
 
@@ -100,6 +97,7 @@ class ShopDataSource(private var initialKey: Int = 0) {
             dataRepo.clear()
             dataRepo.addAll(data)
             pagingListDiffer.submitList(dataRepo.get())
+            Log.e("TAG--setResult--init", "-----${data.size}----${dataRepo.size()}")
             return
         }
 
@@ -108,8 +106,10 @@ class ShopDataSource(private var initialKey: Int = 0) {
         } else {
             dataRepo.addAll(data)
         }
+        Log.e("TAG--setResult--$isPrevious", "-----${data.size}----${dataRepo.size()}")
         pagingListDiffer.submitList(dataRepo.get())
     }
+
 
 }
 
@@ -121,6 +121,8 @@ class ListDatas {
         result.addAll(datas)
         return result
     }
+
+    fun size() = datas.size
 
     fun addAll(t: List<DishShopEntity>) {
         datas.addAll(t)

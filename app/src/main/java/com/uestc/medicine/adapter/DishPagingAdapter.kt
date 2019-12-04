@@ -13,8 +13,7 @@ import com.uestc.medicine.paging.ShopDataSource
 /**
  * Created by PengFeifei on 2019-12-03.
  */
-open class DishPagingAdapter(var source: ShopDataSource?) : RecyclerView.Adapter<ShopViewHolder>(),
-    LoadCallback {
+open class DishPagingAdapter(var source: ShopDataSource?) : RecyclerView.Adapter<ShopViewHolder>(){
 
     lateinit var listView: RecyclerView
 
@@ -40,16 +39,16 @@ open class DishPagingAdapter(var source: ShopDataSource?) : RecyclerView.Adapter
 
 
     override fun onBindViewHolder(holder: ShopViewHolder, position: Int) {
-        holder.bindData(getItem(position))
+        holder.bindData(getItem(position,true))
     }
 
     override fun getItemViewType(position: Int): Int {
-        val data = getItem(position)
+        val data = getItem(position,true)
         return if (data != null && data.showType == 0) 0 else 1
     }
 
-    private fun getItem(position: Int): DishShopEntity? {
-        return source?.getItemInner(position)
+    private fun getItem(position: Int, fromBind: Boolean=false): DishShopEntity? {
+        return source?.getItem(position,fromBind)
     }
 
     override fun onViewAttachedToWindow(holder: ShopViewHolder) {
@@ -60,7 +59,7 @@ open class DishPagingAdapter(var source: ShopDataSource?) : RecyclerView.Adapter
     }
 
     override fun getItemCount(): Int {
-        return if (source == null) 0 else source!!.size()
+        return if (source == null) 0 else source!!.getItemCount()
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
@@ -90,8 +89,6 @@ open class DishPagingAdapter(var source: ShopDataSource?) : RecyclerView.Adapter
         }
     }
 
-    override fun setResult(isInitTial: Boolean, isPrevious: Boolean, data: List<DishShopEntity>?) {
-    }
 }
 
 
@@ -103,12 +100,3 @@ class ShopViewHolder constructor(private val view: View) : RecyclerView.ViewHold
     }
 
 }
-
-
-interface LoadCallback {
-    fun setResult(isInitTial: Boolean, isPrevious: Boolean, data: List<DishShopEntity>?)
-}
-
-
-
-
